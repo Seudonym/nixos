@@ -132,6 +132,12 @@
 
       onlyoffice-desktopeditors
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      qbittorrent
+
+      # gayming
+      ckan
+      lutris
+      protonup-qt
     ];
   };
 
