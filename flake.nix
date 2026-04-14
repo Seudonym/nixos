@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "NixOS configuration for Wahid's machines";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -14,21 +14,17 @@
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      noctalia,
-      ...
-    }:
+    inputs@{ nixpkgs, ... }:
+    let
+      mkHost =
+        hostPath:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ hostPath ];
+        };
+    in
     {
-      nixosConfigurations.zephyrus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          ./noctalia.nix
-          ./asus.nix
-        ];
-      };
+      nixosConfigurations.zephyrus = mkHost ./hosts/zephyrus;
     };
 
   nixConfig = {
