@@ -22,6 +22,7 @@
       gpu-screen-recorder
 
       zoxide
+      yazi
       gh
       eza
       dua
@@ -32,6 +33,7 @@
       git
       zsh
       starship
+      unzip
 
       tree-sitter
       typescript-language-server
@@ -47,6 +49,12 @@
       onlyoffice-desktopeditors
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       qbittorrent
+      gthumb
+      nautilus
+      morewaita-icon-theme
+
+      nwg-look
+      adw-gtk3
 
       ckan
       lutris

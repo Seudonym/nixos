@@ -57,6 +57,8 @@
     gnome-keyring
     xwayland-satellite
     wl-clipboard
+    libsForQt5.qt5ct
+    qt6Packages.qt6ct
   ];
 
   system.stateVersion = "25.11";
