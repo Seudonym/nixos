@@ -53,6 +53,7 @@ in
       zsh
       starship
       unzip
+      jamesdsp
 
       tree-sitter
       typescript-language-server
@@ -62,9 +63,6 @@ in
       nil
       nixfmt
       gcc
-
-      uv
-      awscli2
 
       codex
       gemini-cli
@@ -81,11 +79,7 @@ in
       adw-gtk3
 
       ckan
-      lutris
-      vulkan-loader
       vulkan-tools
-      vulkan-headers
-      protonup-qt
 
       prismlauncher
     ];

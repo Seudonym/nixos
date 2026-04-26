@@ -4,13 +4,11 @@
   imports = [
     ./hardware-configuration.nix
     inputs.spicetify-nix.nixosModules.default
-    ../../modules/common/system.nix
-    ../../modules/common/fonts.nix
-    ../../modules/common/desktop.nix
-    ../../modules/common/gaming.nix
-    ../../modules/users/wahid.nix
-    ../../modules/hardware/asus.nix
-    ../../modules/integrations/noctalia.nix
+    ../../modules/core
+    ../../modules/profiles/desktop
+    ../../modules/profiles/gaming
+    ../../modules/hardware/asus
+    ../../users/wahid
   ];
 
   networking.hostName = "zephyrus";

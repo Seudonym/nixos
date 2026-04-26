@@ -74,7 +74,6 @@
     wl-clipboard
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    jamesdsp
   ];
 
   system.stateVersion = "25.11";
