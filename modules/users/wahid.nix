@@ -4,13 +4,32 @@
   ...
 }:
 
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in
 {
+  programs.spicetify = {
+    enable = true;
+    theme = spicePkgs.themes.starryNight;
+    enabledCustomApps = with spicePkgs.apps; [
+      lyricsPlus
+    ];
+    enabledExtensions = with spicePkgs.extensions; [
+      catJamSynced
+      powerBar
+      hidePodcasts
+      fullAppDisplay
+    ];
+    colorScheme = "Base";
+  };
+
   users.users.wahid = {
     isNormalUser = true;
     description = "Wahid Khan";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.zsh;
 
@@ -18,8 +37,8 @@
       kitty
       vicinae
       brightnessctl
-      spotify
       gpu-screen-recorder
+      kdePackages.kdeconnect-kde
 
       zoxide
       yazi
@@ -44,7 +63,12 @@
       nixfmt
       gcc
 
+      uv
+      awscli2
+
       codex
+      gemini-cli
+      sshfs
 
       onlyoffice-desktopeditors
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -58,7 +82,12 @@
 
       ckan
       lutris
+      vulkan-loader
+      vulkan-tools
+      vulkan-headers
       protonup-qt
+
+      prismlauncher
     ];
   };
 }

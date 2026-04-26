@@ -1,8 +1,13 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
   services.displayManager.gdm.enable = true;
-  programs.niri.enable = true;
+
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   services.xserver.xkb = {
     layout = "us";

@@ -1,8 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.spicetify-nix.nixosModules.default
     ../../modules/common/system.nix
     ../../modules/common/fonts.nix
     ../../modules/common/desktop.nix
